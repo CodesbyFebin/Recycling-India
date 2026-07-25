@@ -362,7 +362,8 @@
       "mandatory": true,
       "productionRequired": true,
       "verify": {
-        "type": "manual",
+        "type": "command",
+        "command": "node scripts/verify-handoff.mjs",
         "instructions": "Attach immutable production verification evidence with deployment identifier, timestamps, tester, route matrix, marketplace smoke transaction, recycler and price freshness checks, security/header report, robots and sitemap checks, monitoring and alert test, backup/restore drill, and rollback result."
       }
     }

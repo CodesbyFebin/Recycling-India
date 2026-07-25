@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "project": "Recycling.EWasteKochi.com",
   "scopeId": "fresh-build-launch-v1",
-  "scopeHash": "b1cb5f834b2e8cd169d2e75647e9a15b247e7b29093e482c3ec4458c742caae1",
-  "startedAt": "2026-07-25T13:15:44.582Z",
-  "finishedAt": "2026-07-25T13:15:53.473Z",
+  "scopeHash": "2b889a4e3ddeb73f8d4596b3af7aa11a943fcd18d79a141b58f6575eae9955c5",
+  "startedAt": "2026-07-25T14:05:04.714Z",
+  "finishedAt": "2026-07-25T14:05:12.575Z",
   "results": {
     "ARCH-001": {
       "status": "VERIFIED_LOCAL",
@@ -36,8 +36,8 @@
       "evidence": [
         {
           "command": "npm run test:contracts",
-          "startedAt": "2026-07-25T13:15:44.584Z",
-          "durationMs": 282,
+          "startedAt": "2026-07-25T14:05:04.716Z",
+          "durationMs": 325,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -53,8 +53,8 @@
       "evidence": [
         {
           "command": "npm run verify:build",
-          "startedAt": "2026-07-25T13:15:44.866Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:05.041Z",
+          "durationMs": 217,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -70,8 +70,8 @@
       "evidence": [
         {
           "command": "npm run verify:engineering",
-          "startedAt": "2026-07-25T13:15:45.110Z",
-          "durationMs": 243,
+          "startedAt": "2026-07-25T14:05:05.258Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -87,8 +87,8 @@
       "evidence": [
         {
           "command": "npm run test:migrations",
-          "startedAt": "2026-07-25T13:15:45.353Z",
-          "durationMs": 247,
+          "startedAt": "2026-07-25T14:05:05.468Z",
+          "durationMs": 209,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -104,8 +104,8 @@
       "evidence": [
         {
           "command": "npm run test:data-integrity",
-          "startedAt": "2026-07-25T13:15:45.600Z",
-          "durationMs": 247,
+          "startedAt": "2026-07-25T14:05:05.677Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -121,8 +121,8 @@
       "evidence": [
         {
           "command": "npm run test:provenance",
-          "startedAt": "2026-07-25T13:15:45.847Z",
-          "durationMs": 248,
+          "startedAt": "2026-07-25T14:05:05.887Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -138,8 +138,8 @@
       "evidence": [
         {
           "command": "npm run test:recycler-state-machine",
-          "startedAt": "2026-07-25T13:15:46.095Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:06.097Z",
+          "durationMs": 209,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -155,8 +155,8 @@
       "evidence": [
         {
           "command": "npm run test:recycler-verification",
-          "startedAt": "2026-07-25T13:15:46.336Z",
-          "durationMs": 251,
+          "startedAt": "2026-07-25T14:05:06.307Z",
+          "durationMs": 213,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -172,8 +172,8 @@
       "evidence": [
         {
           "command": "npm run test:recycler-moderation",
-          "startedAt": "2026-07-25T13:15:46.587Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:06.520Z",
+          "durationMs": 223,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -189,8 +189,8 @@
       "evidence": [
         {
           "command": "npm run test:geography",
-          "startedAt": "2026-07-25T13:15:46.831Z",
-          "durationMs": 243,
+          "startedAt": "2026-07-25T14:05:06.743Z",
+          "durationMs": 208,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -206,8 +206,8 @@
       "evidence": [
         {
           "command": "npm run test:serviceability",
-          "startedAt": "2026-07-25T13:15:47.074Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:06.951Z",
+          "durationMs": 214,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -223,8 +223,8 @@
       "evidence": [
         {
           "command": "npm run test:waste-taxonomy",
-          "startedAt": "2026-07-25T13:15:47.315Z",
-          "durationMs": 248,
+          "startedAt": "2026-07-25T14:05:07.165Z",
+          "durationMs": 208,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -240,8 +240,8 @@
       "evidence": [
         {
           "command": "npm run test:acceptance-rules",
-          "startedAt": "2026-07-25T13:15:47.563Z",
-          "durationMs": 243,
+          "startedAt": "2026-07-25T14:05:07.373Z",
+          "durationMs": 209,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -257,8 +257,8 @@
       "evidence": [
         {
           "command": "npm run test:evidence-ledger",
-          "startedAt": "2026-07-25T13:15:47.806Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:07.582Z",
+          "durationMs": 212,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -274,8 +274,8 @@
       "evidence": [
         {
           "command": "npm run test:publication-gates",
-          "startedAt": "2026-07-25T13:15:48.050Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:07.794Z",
+          "durationMs": 207,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -291,8 +291,8 @@
       "evidence": [
         {
           "command": "npm run test:editorial-lifecycle",
-          "startedAt": "2026-07-25T13:15:48.294Z",
-          "durationMs": 245,
+          "startedAt": "2026-07-25T14:05:08.001Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -308,8 +308,8 @@
       "evidence": [
         {
           "command": "npm run test:price-provenance",
-          "startedAt": "2026-07-25T13:15:48.539Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:08.211Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -325,8 +325,8 @@
       "evidence": [
         {
           "command": "npm run test:price-pipeline",
-          "startedAt": "2026-07-25T13:15:48.780Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:08.421Z",
+          "durationMs": 211,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -342,8 +342,8 @@
       "evidence": [
         {
           "command": "npm run verify:price-disclosures",
-          "startedAt": "2026-07-25T13:15:49.021Z",
-          "durationMs": 243,
+          "startedAt": "2026-07-25T14:05:08.632Z",
+          "durationMs": 208,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -359,8 +359,8 @@
       "evidence": [
         {
           "command": "npm run test:regulatory-corpus",
-          "startedAt": "2026-07-25T13:15:49.264Z",
-          "durationMs": 242,
+          "startedAt": "2026-07-25T14:05:08.840Z",
+          "durationMs": 209,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -376,8 +376,8 @@
       "evidence": [
         {
           "command": "npm run verify:epr-content",
-          "startedAt": "2026-07-25T13:15:49.506Z",
-          "durationMs": 238,
+          "startedAt": "2026-07-25T14:05:09.049Z",
+          "durationMs": 207,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -393,8 +393,8 @@
       "evidence": [
         {
           "command": "npm run test:epr-marketplace",
-          "startedAt": "2026-07-25T13:15:49.744Z",
-          "durationMs": 242,
+          "startedAt": "2026-07-25T14:05:09.256Z",
+          "durationMs": 208,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -410,8 +410,8 @@
       "evidence": [
         {
           "command": "npm run test:marketplace-workflows",
-          "startedAt": "2026-07-25T13:15:49.986Z",
-          "durationMs": 240,
+          "startedAt": "2026-07-25T14:05:09.464Z",
+          "durationMs": 208,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -427,8 +427,8 @@
       "evidence": [
         {
           "command": "npm run test:marketplace-safety",
-          "startedAt": "2026-07-25T13:15:50.226Z",
-          "durationMs": 237,
+          "startedAt": "2026-07-25T14:05:09.672Z",
+          "durationMs": 209,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -444,8 +444,8 @@
       "evidence": [
         {
           "command": "npm run test:marketplace-governance",
-          "startedAt": "2026-07-25T13:15:50.463Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:09.881Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -461,8 +461,8 @@
       "evidence": [
         {
           "command": "npm run verify:ssr-seo",
-          "startedAt": "2026-07-25T13:15:50.707Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:10.091Z",
+          "durationMs": 222,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -478,8 +478,8 @@
       "evidence": [
         {
           "command": "npm run test:indexation-gates",
-          "startedAt": "2026-07-25T13:15:50.948Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:10.313Z",
+          "durationMs": 210,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -495,8 +495,8 @@
       "evidence": [
         {
           "command": "npm run verify:discovery-assets",
-          "startedAt": "2026-07-25T13:15:51.192Z",
-          "durationMs": 239,
+          "startedAt": "2026-07-25T14:05:10.523Z",
+          "durationMs": 211,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -512,8 +512,8 @@
       "evidence": [
         {
           "command": "npm run test:authorization",
-          "startedAt": "2026-07-25T13:15:51.431Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:10.734Z",
+          "durationMs": 212,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -529,8 +529,8 @@
       "evidence": [
         {
           "command": "npm run test:security",
-          "startedAt": "2026-07-25T13:15:51.675Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:10.946Z",
+          "durationMs": 215,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -546,8 +546,8 @@
       "evidence": [
         {
           "command": "npm run verify:privacy",
-          "startedAt": "2026-07-25T13:15:51.919Z",
-          "durationMs": 241,
+          "startedAt": "2026-07-25T14:05:11.161Z",
+          "durationMs": 215,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -563,8 +563,8 @@
       "evidence": [
         {
           "command": "npm run verify:accessibility",
-          "startedAt": "2026-07-25T13:15:52.160Z",
-          "durationMs": 237,
+          "startedAt": "2026-07-25T14:05:11.376Z",
+          "durationMs": 214,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -580,8 +580,8 @@
       "evidence": [
         {
           "command": "npm run verify:performance",
-          "startedAt": "2026-07-25T13:15:52.397Z",
-          "durationMs": 245,
+          "startedAt": "2026-07-25T14:05:11.590Z",
+          "durationMs": 231,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -597,8 +597,8 @@
       "evidence": [
         {
           "command": "npm run test:ci",
-          "startedAt": "2026-07-25T13:15:52.642Z",
-          "durationMs": 240,
+          "startedAt": "2026-07-25T14:05:11.821Z",
+          "durationMs": 265,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -614,8 +614,8 @@
       "evidence": [
         {
           "command": "npm run verify:observability",
-          "startedAt": "2026-07-25T13:15:52.882Z",
-          "durationMs": 244,
+          "startedAt": "2026-07-25T14:05:12.086Z",
+          "durationMs": 251,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -631,8 +631,8 @@
       "evidence": [
         {
           "command": "npm run verify:recovery",
-          "startedAt": "2026-07-25T13:15:53.126Z",
-          "durationMs": 243,
+          "startedAt": "2026-07-25T14:05:12.337Z",
+          "durationMs": 237,
           "exitCode": 0,
           "signal": null,
           "passed": true,
@@ -689,26 +689,15 @@
       ]
     },
     "HAND-002": {
-      "status": "VERIFIED_LOCAL",
-      "fraction": 1,
-      "summary": "1/1 commands passed.",
-      "evidence": [
-        {
-          "command": "node scripts/verify-production.mjs",
-          "startedAt": "2026-07-25T13:15:53.370Z",
-          "durationMs": 103,
-          "exitCode": 0,
-          "signal": null,
-          "passed": true,
-          "stdout": "✓ All production handoff requirements verified\nDeployment URL: https://recycling-india.vercel.app\nGit SHA: fe754dc21d817d969969a36528a11b4b3ba3b7bd\n",
-          "stderr": ""
-        }
-      ]
+      "status": "BLOCKED_EXTERNAL",
+      "fraction": 0,
+      "summary": "Attach immutable production verification evidence with deployment identifier, timestamps, tester, route matrix, marketplace smoke transaction, recycler and price freshness checks, security/header report, robots and sitemap checks, monitoring and alert test, backup/restore drill, and rollback result.",
+      "evidence": []
     }
   },
   "score": {
-    "rawScore": 100,
-    "score": 100,
+    "rawScore": 98,
+    "score": 98,
     "caps": []
   }
 }

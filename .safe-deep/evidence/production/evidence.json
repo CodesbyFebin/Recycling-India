@@ -1,6 +1,6 @@
 {
   "deploy_id": "deploy-2026-07-25",
-  "timestamp": "2026-07-25T14:02:08.024Z",
+  "timestamp": "2026-07-25T14:04:49.984Z",
   "base_url": "https://recycling-india.vercel.app",
   "checks": {
     "route__": {
@@ -82,14 +82,14 @@
     },
     "robots_sitemap": {
       "robots_allow": "PASS",
-      "robots_sitemap_line": "FAIL",
+      "robots_sitemap_line": "PASS",
       "sitemap_index": "PASS",
       "sitemap_status": "PASS"
     },
     "marketplace_smoke": {
       "status": "PASS",
       "statusCode": 201,
-      "audit_trail_id": "ENQ-1784988134582-4zdh5y20v"
+      "audit_trail_id": "ENQ-1784988296166-2l7kux1pd"
     },
     "recycler_authorization": {
       "status": "PASS",

@@ -46,6 +46,6 @@
     "verify:recovery",
     "verify:ssr-seo"
   ],
-  "gitMetadata": false,
-  "generatedAt": "2026-07-24T22:23:20.912Z"
+  "gitMetadata": true,
+  "generatedAt": "2026-07-25T14:05:18.284Z"
 }
