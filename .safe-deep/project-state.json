@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "project": "Recycling.EWasteKochi.com",
+  "scopeId": "fresh-build-launch-v1",
+  "scopeHash": "2b889a4e3ddeb73f8d4596b3af7aa11a943fcd18d79a141b58f6575eae9955c5",
+  "phase": "IMPLEMENTATION",
+  "score": 98,
+  "currentTask": null,
+  "nextSafeAction": "Resolve HAND-002: An authorized production deployment has attached evidence for representative routes, transactions, security headers, crawl assets, analytics consent, monitoring, alerting, backup, restore, and rollback"
+}
