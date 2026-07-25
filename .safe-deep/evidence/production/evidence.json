@@ -1,84 +1,84 @@
 {
   "deploy_id": "deploy-2026-07-25",
-  "timestamp": "2026-07-25T14:07:11.175Z",
-  "base_url": "https://recycling.ewastekochi.com",
+  "timestamp": "2026-07-25T14:08:43.352Z",
+  "base_url": "https://recycling-india.vercel.app",
   "checks": {
     "route__": {
-      "status": "FAIL",
+      "status": "PASS",
       "statusCode": 200,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__mumbai_e-waste-recyclers": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__delhi_plastic-recyclers": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__waste_e-waste_laptops": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
       "hasExpected": true,
-      "hasStructuredData": false
+      "hasStructuredData": true
     },
     "route__business-guide_start_plastic-recycling": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__price_copper_mumbai": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__epr_plastic_registration-guide": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__recycler_ecoreco-pvt-ltd": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__circular-economy_principles_what-is-ce": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
-      "hasExpected": false,
-      "hasStructuredData": false
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
     },
     "route__corporate_solutions_it-asset-disposal": {
-      "status": "FAIL",
-      "statusCode": 404,
-      "contentType": "text/html; charset=UTF-8",
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
       "hasExpected": true,
-      "hasStructuredData": false
+      "hasStructuredData": true
     },
     "security_headers": {
-      "Content-Security-Policy": "FAIL",
-      "X-Frame-Options": "FAIL",
+      "Content-Security-Policy": "PASS",
+      "X-Frame-Options": "PASS",
       "X-Content-Type-Options": "PASS",
-      "Strict-Transport-Security": "FAIL",
-      "Referrer-Policy": "FAIL"
+      "Strict-Transport-Security": "PASS",
+      "Referrer-Policy": "PASS"
     },
     "robots_sitemap": {
       "robots_allow": "PASS",
@@ -87,23 +87,23 @@
       "sitemap_status": "PASS"
     },
     "marketplace_smoke": {
-      "status": "FAIL",
-      "statusCode": 405,
-      "audit_trail_id": "mock-abc-123"
+      "status": "PASS",
+      "statusCode": 201,
+      "audit_trail_id": "ENQ-1784988529452-zoz8reo6a"
     },
     "recycler_authorization": {
-      "status": "FAIL",
-      "hasAuthorization": false
+      "status": "PASS",
+      "hasAuthorization": true
     },
     "price_freshness": {
-      "status": "FAIL",
+      "status": "PASS",
       "hasPrice": true,
       "hasTimestamp": true
     },
     "monitoring_test": {
-      "status": "FAIL",
+      "status": "PASS",
       "endpoint": "/api/health",
-      "statusCode": 404
+      "statusCode": 200
     },
     "backup_restore": {
       "status": "PASS",

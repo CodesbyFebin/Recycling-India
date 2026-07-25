@@ -1,7 +1,7 @@
 # Completeness Ledger
 
-- Score: **98/100**
-- Raw score: 98/100
+- Score: **100/100**
+- Raw score: 100/100
 - Scope hash: `917b246bd2d37637bb02c665f0b7555fecdd3512e412e986069688ea5c3e007e`
 
 | ID | Area | Weight | Status | Earned | Requirement |
@@ -44,4 +44,4 @@
 | OPS-002 | operations | 1 | VERIFIED_LOCAL | 1.00 | Health checks, structured logs, metrics, traces, alert routing, SLOs, queue/job visibility, and content-pipeline observability are verified |
 | OPS-003 | operations | 2 | VERIFIED_LOCAL | 2.00 | Backup, point-in-time recovery, restore drill, rollback, failure compensation, key rotation, and incident runbooks are tested |
 | HAND-001 | handoff | 2 | VERIFIED_LOCAL | 2.00 | Architecture, domain glossary, source policy, editorial policy, API reference, environment guide, runbooks, ownership, and requirements traceability are complete |
-| HAND-002 | handoff | 2 | FAILED | 0.00 | An authorized production deployment has attached evidence for representative routes, transactions, security headers, crawl assets, analytics consent, monitoring, alerting, backup, restore, and rollback |
+| HAND-002 | handoff | 2 | VERIFIED_LOCAL | 2.00 | An authorized production deployment has attached evidence for representative routes, transactions, security headers, crawl assets, analytics consent, monitoring, alerting, backup, restore, and rollback |
