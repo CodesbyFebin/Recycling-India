@@ -1,0 +1,69 @@
+{
+  "deployment": {
+    "url": "https://recycling-india.vercel.app",
+    "timestamp": "2026-07-25T11:26:08.117Z",
+    "gitSha": "fe754dc21d817d969969a36528a11b4b3ba3b7bd",
+    "verifiedAt": "2026-07-25T11:26:12.074Z"
+  },
+  "checks": {
+    "pages": [
+      {
+        "path": "/",
+        "status": 200,
+        "ok": true,
+        "contentLength": 1649,
+        "hasDoctype": true,
+        "hasHtml": true,
+        "headHasTitle": true,
+        "headHasMetaDescription": true,
+        "hasCanonical": false,
+        "hasOgTitle": false,
+        "hasOgDescription": false,
+        "hasSchemaOrg": false
+      },
+      {
+        "path": "/recycling-directory",
+        "status": 200,
+        "ok": true,
+        "contentLength": 1536,
+        "hasDoctype": true,
+        "hasHtml": true,
+        "headHasTitle": true,
+        "headHasMetaDescription": true,
+        "hasCanonical": false,
+        "hasOgTitle": false,
+        "hasOgDescription": false,
+        "hasSchemaOrg": false
+      },
+      {
+        "path": "/waste-type-database",
+        "status": 200,
+        "ok": true,
+        "contentLength": 1570,
+        "hasDoctype": true,
+        "hasHtml": true,
+        "headHasTitle": true,
+        "headHasMetaDescription": true,
+        "hasCanonical": false,
+        "hasOgTitle": false,
+        "hasOgDescription": false,
+        "hasSchemaOrg": false
+      },
+      {
+        "path": "/e-waste-recycling",
+        "status": 200,
+        "ok": true,
+        "contentLength": 1565,
+        "hasDoctype": true,
+        "hasHtml": true,
+        "headHasTitle": true,
+        "headHasMetaDescription": true,
+        "hasCanonical": false,
+        "hasOgTitle": false,
+        "hasOgDescription": false,
+        "hasSchemaOrg": false
+      }
+    ]
+  },
+  "passed": true
+}
