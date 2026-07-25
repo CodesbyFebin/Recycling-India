@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "planId": "recycling-fresh-build-v1",
+  "maxConcurrency": 4,
+  "agents": [
+    {
+      "id": "architecture-worker",
+      "capabilities": ["repository-audit", "contracts", "build", "tests"]
+    },
+    {
+      "id": "research-worker",
+      "capabilities": ["source-discovery", "evidence-extraction", "regulation-research"]
+    },
+    {
+      "id": "recycler-verification-worker",
+      "capabilities": ["entity-resolution", "recycler-verification", "serviceability"]
+    },
+    {
+      "id": "content-worker",
+      "capabilities": ["manifest", "blueprint", "content-candidate", "internal-links"]
+    },
+    {
+      "id": "quality-worker",
+      "capabilities": ["data-quality", "seo", "accessibility", "security-tests"]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "audit-repository",
+      "title": "Audit repository and establish baseline",
+      "requiredCapabilities": ["repository-audit"],
+      "risk": "READ_ONLY",
+      "authorization": "AUTO",
+      "priority": 100,
+      "dependsOn": [],
+      "outputs": ["candidate:audit-report"]
+    },
+    {
+      "id": "freeze-contracts",
+      "title": "Freeze manifests, entities, evidence, and publication contracts",
+      "requiredCapabilities": ["contracts"],
+      "risk": "REVERSIBLE_WRITE",
+      "authorization": "COORDINATOR",
+      "priority": 90,
+      "dependsOn": ["audit-repository"],
+      "outputs": ["candidate:contract-package"]
+    },
+    {
+      "id": "collect-policy-sources",
+      "title": "Collect authoritative policy sources and version metadata",
+      "requiredCapabilities": ["regulation-research"],
+      "risk": "READ_ONLY",
+      "authorization": "AUTO",
+      "priority": 85,
+      "dependsOn": ["audit-repository"],
+      "outputs": ["candidate:policy-source-register"]
+    },
+    {
+      "id": "verify-first-recycler",
+      "title": "Verify one recycler identity, facility, authorization, and serviceability",
+      "requiredCapabilities": ["recycler-verification", "serviceability"],
+      "risk": "READ_ONLY",
+      "authorization": "AUTO",
+      "priority": 80,
+      "dependsOn": ["freeze-contracts", "collect-policy-sources"],
+      "outputs": ["candidate:recycler-evidence-package"]
+    },
+    {
+      "id": "build-first-profile",
+      "title": "Build the first evidence-backed recycler profile",
+      "requiredCapabilities": ["content-candidate"],
+      "risk": "REVERSIBLE_WRITE",
+      "authorization": "COORDINATOR",
+      "priority": 70,
+      "dependsOn": ["verify-first-recycler"],
+      "outputs": ["candidate:recycler-profile"]
+    },
+    {
+      "id": "validate-first-profile",
+      "title": "Run data, security, accessibility, and SEO validation",
+      "requiredCapabilities": ["data-quality", "seo", "accessibility", "security-tests"],
+      "risk": "READ_ONLY",
+      "authorization": "AUTO",
+      "priority": 60,
+      "dependsOn": ["build-first-profile"],
+      "outputs": ["candidate:gate-report"]
+    },
+    {
+      "id": "publish-first-profile",
+      "title": "Publish the approved immutable recycler profile",
+      "requiredCapabilities": ["content-candidate"],
+      "risk": "EXTERNAL_WRITE",
+      "authorization": "HUMAN",
+      "priority": 50,
+      "dependsOn": ["validate-first-profile"],
+      "outputs": ["candidate:publication-receipt"]
+    }
+  ]
+}

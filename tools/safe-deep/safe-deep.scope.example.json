@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "project": "Recycling.EWasteKochi.com",
+  "scopeId": "fresh-build-launch-v1",
+  "scopeFrozen": true,
+  "minimumScore": 99,
+  "targetScore": 100,
+  "maxIterations": 12,
+  "areas": [
+    { "id": "architecture", "name": "Architecture, contracts, and universal page engine", "weight": 6 },
+    { "id": "build", "name": "Build, type safety, linting, and dependencies", "weight": 6 },
+    { "id": "data", "name": "Data model, migrations, provenance, and integrity", "weight": 8 },
+    { "id": "recyclers", "name": "Recycler identity, authorization, and verification", "weight": 8 },
+    { "id": "geography", "name": "Geography, local intent, and serviceability", "weight": 6 },
+    { "id": "taxonomy", "name": "Waste taxonomy and acceptance rules", "weight": 5 },
+    { "id": "evidence", "name": "Evidence, claims, and editorial lifecycle", "weight": 8 },
+    { "id": "prices", "name": "Scrap-price intelligence and market-data integrity", "weight": 6 },
+    { "id": "epr", "name": "EPR, policy, and regulatory accuracy", "weight": 8 },
+    { "id": "marketplace", "name": "Marketplace safety, leads, listings, and moderation", "weight": 8 },
+    { "id": "seo", "name": "SEO, SSR, structured data, and AI discovery", "weight": 8 },
+    { "id": "security", "name": "Security, privacy, abuse resistance, and tenancy", "weight": 9 },
+    { "id": "accessibility", "name": "Accessibility, responsive UX, and performance", "weight": 5 },
+    { "id": "operations", "name": "Testing, CI/CD, observability, backup, and recovery", "weight": 5 },
+    { "id": "handoff", "name": "Documentation, deployment evidence, and production handoff", "weight": 4 }
+  ],
+  "criteria": [
+    {
+      "id": "ARCH-001",
+      "area": "architecture",
+      "requirement": "Architecture constitution, repository boundaries, ADRs, and ownership are documented",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "files", "all": ["docs/architecture.md", "docs/adr/README.md", "CODEOWNERS", "package.json"] }
+    },
+    {
+      "id": "ARCH-002",
+      "area": "architecture",
+      "requirement": "A single manifest-to-blueprint-to-renderer pipeline supports all launch page types without duplicated generators",
+      "weight": 4,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:contracts" }
+    },
+    {
+      "id": "BUILD-001",
+      "area": "build",
+      "requirement": "A clean, reproducible production build passes from the lockfile",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["build", "critical"],
+      "verify": { "type": "command", "command": "npm run verify:build" }
+    },
+    {
+      "id": "BUILD-002",
+      "area": "build",
+      "requirement": "Typecheck, lint, formatting, and dependency/license audits pass with no unresolved critical findings",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:engineering" }
+    },
+    {
+      "id": "DATA-001",
+      "area": "data",
+      "requirement": "Schema and migrations apply from an empty database and upgrade a representative prior snapshot",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["data-integrity"],
+      "verify": { "type": "command", "command": "npm run test:migrations" }
+    },
+    {
+      "id": "DATA-002",
+      "area": "data",
+      "requirement": "Canonical entities, stable identifiers, aliases, deduplication, versioning, audit fields, and referential constraints pass",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:data-integrity" }
+    },
+    {
+      "id": "DATA-003",
+      "area": "data",
+      "requirement": "Every imported or asserted record carries source, retrieval time, license/usage status, transformation history, confidence, and expiry where applicable",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:provenance" }
+    },
+    {
+      "id": "REC-001",
+      "area": "recyclers",
+      "requirement": "Recycler profiles distinguish claimed, identity-verified, authorization-verified, expired, suspended, and rejected states",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:recycler-state-machine" }
+    },
+    {
+      "id": "REC-002",
+      "area": "recyclers",
+      "requirement": "Authorization and certification claims retain issuer, identifier, scope, validity dates, evidence artifact, reviewer, and re-verification schedule",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["recycler-verification", "critical"],
+      "verify": { "type": "command", "command": "npm run test:recycler-verification" }
+    },
+    {
+      "id": "REC-003",
+      "area": "recyclers",
+      "requirement": "Claiming, correction, dispute, suspension, review, and expiry workflows are auditable and cannot silently promote unverified recyclers",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:recycler-moderation" }
+    },
+    {
+      "id": "GEO-001",
+      "area": "geography",
+      "requirement": "India state, district, city, locality, postal-code, coordinate, alias, and parent relationships use canonical identifiers and reject invalid combinations",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:geography" }
+    },
+    {
+      "id": "GEO-002",
+      "area": "geography",
+      "requirement": "Pickup and drop-off coverage records include service mode, geographic boundary, waste constraints, minimum quantity, schedule, freshness, and explicit unknown states",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:serviceability" }
+    },
+    {
+      "id": "TAX-001",
+      "area": "taxonomy",
+      "requirement": "Versioned waste taxonomy covers launch materials, synonyms, hierarchy, regulatory class, hazard flags, units, and contamination rules",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:waste-taxonomy" }
+    },
+    {
+      "id": "TAX-002",
+      "area": "taxonomy",
+      "requirement": "Recycler-material acceptance is modeled independently from taxonomy and captures condition, form, quantity, exclusions, handling, and evidence",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:acceptance-rules" }
+    },
+    {
+      "id": "EVID-001",
+      "area": "evidence",
+      "requirement": "Atomic claim ledger binds claims to source passages, publisher, retrieval date, jurisdiction, effective date, confidence, contradiction, and expiry",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["evidence"],
+      "verify": { "type": "command", "command": "npm run test:evidence-ledger" }
+    },
+    {
+      "id": "EVID-002",
+      "area": "evidence",
+      "requirement": "Publication gates reject unsupported, stale, contradictory, scraped-without-rights, fabricated, thin, or materially duplicated content",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:publication-gates" }
+    },
+    {
+      "id": "EVID-003",
+      "area": "evidence",
+      "requirement": "Human editorial approval binds reviewer and immutable content digest; corrections and retractions retain public and internal audit history",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:editorial-lifecycle" }
+    },
+    {
+      "id": "PRICE-001",
+      "area": "prices",
+      "requirement": "Every displayed scrap price records material grade, unit, currency, city/market, source, observation time, tax/transport basis, confidence, and expiry",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["price-integrity", "critical"],
+      "verify": { "type": "command", "command": "npm run test:price-provenance" }
+    },
+    {
+      "id": "PRICE-002",
+      "area": "prices",
+      "requirement": "Normalization, outlier handling, stale-price suppression, ranges, missing states, corrections, and historical chart calculations pass against fixtures",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:price-pipeline" }
+    },
+    {
+      "id": "PRICE-003",
+      "area": "prices",
+      "requirement": "Price pages clearly disclose that values are indicative, show timestamp and methodology, and never represent seed or synthetic data as live",
+      "weight": 1,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:price-disclosures" }
+    },
+    {
+      "id": "EPR-001",
+      "area": "epr",
+      "requirement": "Regulatory corpus is jurisdiction- and version-aware and tracks official source, rule/amendment, effective period, applicability, and supersession",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["regulatory", "critical"],
+      "verify": { "type": "command", "command": "npm run test:regulatory-corpus" }
+    },
+    {
+      "id": "EPR-002",
+      "area": "epr",
+      "requirement": "EPR guidance separates legal text, editorial explanation, workflow, eligibility, evidence, and non-legal-advice disclosures",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:epr-content" }
+    },
+    {
+      "id": "EPR-003",
+      "area": "epr",
+      "requirement": "EPR service and credit listings require counterparty verification, program/material/year scope, quantity and status controls, and immutable transaction audit records",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:epr-marketplace" }
+    },
+    {
+      "id": "MKT-001",
+      "area": "marketplace",
+      "requirement": "Listings and leads enforce authentication, ownership, lifecycle, quantity/unit, serviceability, evidence, expiry, and moderation constraints",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:marketplace-workflows" }
+    },
+    {
+      "id": "MKT-002",
+      "area": "marketplace",
+      "requirement": "Hazardous/prohibited materials, unsafe handling, fraud, spam, duplicate listings, contact scraping, and rate abuse are prevented or review-gated",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["marketplace-safety", "critical"],
+      "verify": { "type": "command", "command": "npm run test:marketplace-safety" }
+    },
+    {
+      "id": "MKT-003",
+      "area": "marketplace",
+      "requirement": "Consent, complaint, dispute, takedown, cancellation, retention, and incident workflows are tested and auditable",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:marketplace-governance" }
+    },
+    {
+      "id": "SEO-001",
+      "area": "seo",
+      "requirement": "Indexable pages are server-rendered with unique titles, descriptions, headings, canonicals, breadcrumbs, language, status codes, and crawl directives",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["seo"],
+      "verify": { "type": "command", "command": "npm run verify:ssr-seo" }
+    },
+    {
+      "id": "SEO-002",
+      "area": "seo",
+      "requirement": "Programmatic routes publish only when entity, intent, serviceability, evidence, uniqueness, and minimum-value gates pass; invalid combinations are noindex or absent",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:indexation-gates" }
+    },
+    {
+      "id": "SEO-003",
+      "area": "seo",
+      "requirement": "Validated JSON-LD, segmented XML sitemaps, robots.txt, internal links, redirects, pagination, llms.txt, and concise answer blocks pass",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:discovery-assets" }
+    },
+    {
+      "id": "SEC-001",
+      "area": "security",
+      "requirement": "Authentication, server-side authorization, admin separation, object ownership, and cross-tenant adversarial tests pass",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["tenant-isolation", "critical"],
+      "verify": { "type": "command", "command": "npm run test:authorization" }
+    },
+    {
+      "id": "SEC-002",
+      "area": "security",
+      "requirement": "OWASP-focused tests cover injection, XSS, CSRF, SSRF, upload validation, secrets, headers, dependency risk, rate limits, and audit logging",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["security", "critical"],
+      "verify": { "type": "command", "command": "npm run test:security" }
+    },
+    {
+      "id": "SEC-003",
+      "area": "security",
+      "requirement": "Data inventory, consent, purpose limitation, minimization, encryption, retention, deletion/export, processor records, and privacy notices are verified",
+      "weight": 3,
+      "mandatory": true,
+      "tags": ["privacy", "critical"],
+      "verify": { "type": "command", "command": "npm run verify:privacy" }
+    },
+    {
+      "id": "A11Y-001",
+      "area": "accessibility",
+      "requirement": "Automated and manual critical-path checks meet WCAG 2.2 AA for keyboard, focus, labels, semantics, contrast, errors, motion, and zoom",
+      "weight": 3,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:accessibility" }
+    },
+    {
+      "id": "A11Y-002",
+      "area": "accessibility",
+      "requirement": "Responsive layouts and measured production-like Core Web Vitals and asset budgets pass across representative templates",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:performance" }
+    },
+    {
+      "id": "OPS-001",
+      "area": "operations",
+      "requirement": "Unit, integration, end-to-end, content replay, migration, and smoke suites pass in protected CI with immutable artifacts",
+      "weight": 2,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run test:ci" }
+    },
+    {
+      "id": "OPS-002",
+      "area": "operations",
+      "requirement": "Health checks, structured logs, metrics, traces, alert routing, SLOs, queue/job visibility, and content-pipeline observability are verified",
+      "weight": 1,
+      "mandatory": true,
+      "verify": { "type": "command", "command": "npm run verify:observability" }
+    },
+    {
+      "id": "OPS-003",
+      "area": "operations",
+      "requirement": "Backup, point-in-time recovery, restore drill, rollback, failure compensation, key rotation, and incident runbooks are tested",
+      "weight": 2,
+      "mandatory": true,
+      "tags": ["recovery", "critical"],
+      "verify": { "type": "command", "command": "npm run verify:recovery" }
+    },
+    {
+      "id": "HAND-001",
+      "area": "handoff",
+      "requirement": "Architecture, domain glossary, source policy, editorial policy, API reference, environment guide, runbooks, ownership, and requirements traceability are complete",
+      "weight": 2,
+      "mandatory": true,
+      "verify": {
+        "type": "files",
+        "all": [
+          "docs/architecture.md",
+          "docs/domain-glossary.md",
+          "docs/source-policy.md",
+          "docs/editorial-policy.md",
+          "docs/api.md",
+          "docs/environments.md",
+          "docs/runbooks/deployment.md",
+          "docs/runbooks/rollback.md",
+          "docs/runbooks/incidents.md",
+          "docs/completeness/REQUIREMENTS_TRACEABILITY.md"
+        ]
+      }
+    },
+    {
+      "id": "HAND-002",
+      "area": "handoff",
+      "requirement": "An authorized production deployment has attached evidence for representative routes, transactions, security headers, crawl assets, analytics consent, monitoring, alerting, backup, restore, and rollback",
+      "weight": 2,
+      "mandatory": true,
+      "productionRequired": true,
+      "verify": {
+        "type": "manual",
+        "instructions": "Attach immutable production verification evidence with deployment identifier, timestamps, tester, route matrix, marketplace smoke transaction, recycler and price freshness checks, security/header report, robots and sitemap checks, monitoring and alert test, backup/restore drill, and rollback result."
+      }
+    }
+  ],
+  "scoreCaps": [
+    { "whenTagFails": "build", "cap": 70, "reason": "The reproducible production build is not verified." },
+    { "whenTagFails": "data-integrity", "cap": 75, "reason": "Core data integrity or migration safety is not verified." },
+    { "whenTagFails": "tenant-isolation", "cap": 60, "reason": "Authorization or tenant isolation is not verified." },
+    { "whenTagFails": "recycler-verification", "cap": 75, "reason": "Recycler authorization claims cannot be trusted." },
+    { "whenTagFails": "price-integrity", "cap": 75, "reason": "Displayed scrap prices lack verified integrity." },
+    { "whenTagFails": "regulatory", "cap": 75, "reason": "Regulatory and EPR accuracy is not verified." },
+    { "whenTagFails": "marketplace-safety", "cap": 65, "reason": "Marketplace safety controls are not verified." },
+    { "whenTagFails": "privacy", "cap": 70, "reason": "Privacy controls are not verified." },
+    { "whenTagFails": "recovery", "cap": 85, "reason": "Recovery and rollback readiness is not verified." },
+    { "whenTagFails": "critical", "cap": 80, "reason": "A launch-critical requirement failed." }
+  ]
+}

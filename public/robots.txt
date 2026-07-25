@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Sitemap: https://recycling-india.vercel.app/sitemap.xml
 

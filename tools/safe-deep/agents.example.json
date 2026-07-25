@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "maxConcurrency": 4,
+  "coordinator": {
+    "id": "safe-deep-coordinator",
+    "canonicalWriteAuthority": true
+  },
+  "agents": [
+    {
+      "id": "architecture-worker",
+      "capabilities": ["repository-audit", "contracts", "build", "tests"],
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "research-worker",
+      "capabilities": ["source-discovery", "evidence-extraction", "regulation-research"],
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "recycler-verification-worker",
+      "capabilities": ["entity-resolution", "recycler-verification", "serviceability"],
+      "maxRisk": "HIGH"
+    },
+    {
+      "id": "content-worker",
+      "capabilities": ["manifest", "blueprint", "content-candidate", "internal-links"],
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "quality-worker",
+      "capabilities": ["data-quality", "seo", "accessibility", "security-tests"],
+      "maxRisk": "HIGH"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "deploy_id": "deploy-2026-07-25",
+  "timestamp": "2026-07-25T14:02:08.024Z",
+  "base_url": "https://recycling-india.vercel.app",
+  "checks": {
+    "route__": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__mumbai_e-waste-recyclers": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__delhi_plastic-recyclers": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__waste_e-waste_laptops": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__business-guide_start_plastic-recycling": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__price_copper_mumbai": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__epr_plastic_registration-guide": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__recycler_ecoreco-pvt-ltd": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__circular-economy_principles_what-is-ce": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "route__corporate_solutions_it-asset-disposal": {
+      "status": "PASS",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "hasExpected": true,
+      "hasStructuredData": true
+    },
+    "security_headers": {
+      "Content-Security-Policy": "PASS",
+      "X-Frame-Options": "PASS",
+      "X-Content-Type-Options": "PASS",
+      "Strict-Transport-Security": "PASS",
+      "Referrer-Policy": "PASS"
+    },
+    "robots_sitemap": {
+      "robots_allow": "PASS",
+      "robots_sitemap_line": "FAIL",
+      "sitemap_index": "PASS",
+      "sitemap_status": "PASS"
+    },
+    "marketplace_smoke": {
+      "status": "PASS",
+      "statusCode": 201,
+      "audit_trail_id": "ENQ-1784988134582-4zdh5y20v"
+    },
+    "recycler_authorization": {
+      "status": "PASS",
+      "hasAuthorization": true
+    },
+    "price_freshness": {
+      "status": "PASS",
+      "hasPrice": true,
+      "hasTimestamp": true
+    },
+    "monitoring_test": {
+      "status": "PASS",
+      "endpoint": "/api/health",
+      "statusCode": 200
+    },
+    "backup_restore": {
+      "status": "PASS",
+      "note": "Manual verification performed by deployer"
+    },
+    "rollback_readiness": {
+      "status": "PASS",
+      "scriptPresent": 64
+    }
+  }
+}

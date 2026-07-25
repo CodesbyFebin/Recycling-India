@@ -1,0 +1,14 @@
+{
+  "name": "recycling-ewastekochi-safe-deep-runner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs agent-output/a2a/*.test.mjs",
+    "test:adversarial": "node --test agent-output/adversarial/adversarial.conformance.test.mjs",
+    "validate": "node safe-deep-recycling.mjs validate --scope safe-deep.scope.example.json --plan work-plan.example.json",
+    "demo:a2a": "node safe-deep-recycling.mjs plan --plan work-plan.example.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
