@@ -15,9 +15,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const LIVE_SCRIPT = path.join(__dirname, 'verify-production-live.mjs');
 const EVIDENCE_DIR = path.join(process.cwd(), '.safe-deep', 'evidence', 'production');
 
+// Set production URL environment variable
+const env = { ...process.env, PROD_BASE_URL: 'https://recycling-india.vercel.app' };
+
 // Run live verification
 console.log('[HAND-002] Running live production verification...');
-const liveResult = spawnSync('node', [LIVE_SCRIPT], { stdio: 'inherit' });
+const liveResult = spawnSync('node', [LIVE_SCRIPT], { stdio: 'inherit', env });
 if (liveResult.status !== 0) {
   console.error('[HAND-002] Live verification failed');
   process.exit(1);
